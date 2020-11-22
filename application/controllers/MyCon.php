@@ -27,11 +27,17 @@ class MyCon extends CI_Controller
 			}
 		}
 	}
-	public function search()
+	function searchname($searchname)
 	{
-		$search=$this->input->post('pname');
-		$data['result']=$this->MyModel->search($search);
-		$this->load->view('search_display',$data);
+		$this->db->like('pname',$searchname);
+		$q=$this->db->get('productlist');
+		return $q->result();
+	}
+	function searchdate($searchdate)
+	{
+		$this->db->like('createdate',$searchdate);
+		$q=$this->db->get('productlist');
+		return $q->result();
 	}
 	public function login()
 	{
