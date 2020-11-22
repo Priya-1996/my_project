@@ -30,6 +30,9 @@
 <pre>
 <form action="<?php echo site_url('MyCon/search'); ?>" method="post">
 <center><input type="text" name="pname"><input type="submit" name="Search" value="Search" style="background-color: blue; color: white;"></center>	
+</form><br>
+<form action="<?php echo site_url('MyCon/searchdate'); ?>" method="post">
+<center><input type="date" name="date"><input type="submit" name="Search" value="Search" style="background-color: blue; color: white;"></center>	
 </form>
 </pre>
 <button style="background-color: green; color: white;"><a href="<?php echo base_url().'index.php/MyCon/product_list'?>" style="color: white;">ADD NEW PRODUCT</a></button>
