@@ -12,12 +12,17 @@ class MyModel extends CI_Model
 			return false;
 		}
 	}
-	function search($search)
+	function searchname($searchname)
 	{
-		$this->db->like('pname',$search);
+		$this->db->like('pname',$searchname);
 		$q=$this->db->get('productlist');
 		return $q->result();
-
+	}
+	function searchdate($searchdate)
+	{
+		$this->db->like('createdate',$searchdate);
+		$q=$this->db->get('productlist');
+		return $q->result();
 	}
 	function login($email,$password)
 	{
